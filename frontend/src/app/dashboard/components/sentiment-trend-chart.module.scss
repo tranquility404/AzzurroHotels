@@ -1,0 +1,282 @@
+.chartWrap {
+  min-width: 0;
+}
+
+.chartLegend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.1rem;
+  margin-bottom: 0.65rem;
+
+  span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: #6f838b;
+    font-size: 0.68rem;
+  }
+
+  i {
+    width: 9px;
+    height: 9px;
+    border-radius: 3px;
+  }
+
+  strong {
+    margin-left: 0.1rem;
+    color: #2a4653;
+    font-size: 0.72rem;
+    font-weight: 700;
+  }
+}
+
+.legendPositive { background: #668579; }
+.legendNegative { background: #ad5146; }
+
+.chartToolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.7rem;
+  margin-bottom: 0.55rem;
+}
+
+.chartTypeToggle {
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 2px;
+  padding: 3px;
+  background: #f2f6f6;
+  border: 1px solid #e5ecee;
+  border-radius: 8px;
+
+  button {
+    min-width: 3.2rem;
+    padding: 0.3rem 0.55rem;
+    color: #758890;
+    background: transparent;
+    border: 0;
+    border-radius: 5px;
+    font: inherit;
+    font-size: 0.63rem;
+    font-weight: 620;
+    cursor: pointer;
+
+    &:focus-visible { outline: 2px solid #4f7d79; outline-offset: 2px; }
+  }
+}
+
+.chartTypeActive {
+  color: #365f55 !important;
+  background: #fff !important;
+  box-shadow: 0 1px 3px rgb(24 55 67 / 12%);
+}
+
+.chartToolbar .chartLegend { margin-bottom: 0; }
+
+.chartControls {
+  display: grid;
+  gap: 0.55rem;
+  margin-top: 0.75rem;
+}
+
+.thresholdControl,
+.pointControl {
+  display: grid;
+  gap: 0.3rem;
+  margin: 0;
+  padding: 0.62rem 0.78rem 0.5rem;
+  background: #f6f9fa;
+  border: 1px solid #e9eff0;
+  border-radius: 10px;
+
+  input {
+    width: 100%;
+    height: 1.15rem;
+    margin: 0;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+
+    &::-webkit-slider-runnable-track {
+      height: 0.28rem;
+      background: #dce7e7;
+      border-radius: 999px;
+    }
+
+    &::-webkit-slider-thumb {
+      width: 16px;
+      height: 16px;
+      margin-top: -6px;
+      appearance: none;
+      background: #668579;
+      border: 3px solid #fff;
+      border-radius: 50%;
+      box-shadow: 0 0 0 1px #668579, 0 2px 5px rgb(24 55 67 / 18%);
+    }
+
+    &::-moz-range-track {
+      height: 0.28rem;
+      background: #dce7e7;
+      border-radius: 999px;
+    }
+
+    &::-moz-range-thumb {
+      width: 10px;
+      height: 10px;
+      background: #668579;
+      border: 3px solid #fff;
+      border-radius: 50%;
+      box-shadow: 0 0 0 1px #668579, 0 2px 5px rgb(24 55 67 / 18%);
+    }
+
+    &:focus-visible { outline: none; }
+
+    &:focus-visible::-webkit-slider-thumb {
+      box-shadow: 0 0 0 3px #f6f9fa, 0 0 0 5px #365f55;
+    }
+
+    &:focus-visible::-moz-range-thumb {
+      box-shadow: 0 0 0 3px #f6f9fa, 0 0 0 5px #365f55;
+    }
+
+    &:disabled { cursor: not-allowed; opacity: 0.55; }
+  }
+}
+
+.thresholdHeading,
+.pointHeading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.35rem 0.8rem;
+
+  label {
+    color: #5f7780;
+    font-size: 0.68rem;
+    font-weight: 650;
+  }
+
+  output {
+    color: #2a4653;
+    font-size: 0.68rem;
+    font-weight: 680;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+.thresholdEnds,
+.pointEnds {
+  display: flex;
+  justify-content: space-between;
+  margin-top: -0.35rem;
+  color: #87999f;
+  font-size: 0.59rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.thresholdControl p,
+.pointControl p {
+  margin: 0;
+  color: #81939a;
+  font-size: 0.63rem;
+  line-height: 1.4;
+}
+
+.chart {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.gridLine {
+  stroke: #e8eef0;
+  stroke-dasharray: 3 5;
+}
+
+.axisText {
+  fill: #84969d;
+  font-size: 10px;
+  font-family: var(--font-geist-sans), "Segoe UI", sans-serif;
+}
+
+.linePositive,
+.lineNegative {
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.linePositive { stroke: #668579; }
+.lineNegative { stroke: #ad5146; }
+.barPositive { fill: #668579; }
+.barNegative { fill: #ad5146; }
+
+.dotPositive,
+.dotNegative {
+  fill: #fff;
+  stroke-width: 2.4;
+}
+
+.dotPositive { stroke: #668579; }
+.dotNegative { stroke: #ad5146; }
+
+.chartEmpty {
+  display: grid;
+  min-height: 220px;
+  place-items: center;
+  color: #74888e;
+  font-size: 0.78rem;
+  text-align: center;
+}
+
+.chartNote {
+  margin: 0.38rem 0 0;
+  color: #81939a;
+  font-size: 0.66rem;
+  line-height: 1.5;
+}
+
+.chartStats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.5rem;
+  margin-top: 0.85rem;
+  padding: 0.7rem 0.8rem;
+  background: #f6f9fa;
+  border: 1px solid #e9eff0;
+  border-radius: 11px;
+
+  > div {
+    display: grid;
+    min-width: 0;
+    gap: 0.15rem;
+  }
+
+  span {
+    color: #83959c;
+    font-size: 0.58rem;
+    font-weight: 620;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  strong {
+    overflow: hidden;
+    color: #2a4653;
+    font-size: 0.9rem;
+    font-weight: 680;
+    letter-spacing: -0.02em;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 560px) {
+  .chartToolbar { align-items: flex-start; flex-direction: column; }
+
+  .chartStats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

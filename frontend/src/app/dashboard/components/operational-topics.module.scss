@@ -1,0 +1,164 @@
+.section {
+  margin-top: 0.8rem;
+  padding: 0.95rem 1.1rem 1rem;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: 0 14px 38px rgb(23 49 62 / 4.5%);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+
+  h2 {
+    margin: 0;
+    color: #1d3946;
+    font-size: 1rem;
+    font-weight: 650;
+    letter-spacing: -0.03em;
+  }
+}
+
+.dateRange {
+  flex: none;
+  margin: 0;
+  color: #70838a;
+  font-size: 0.65rem;
+}
+
+.methodNote {
+  margin: 0.42rem 0 0.55rem;
+  color: #819197;
+  font-size: 0.63rem;
+  line-height: 1.5;
+}
+
+.emptyState {
+  margin: 0;
+  padding: 0.9rem 1rem;
+  color: #71838a;
+  background: #f7f9f8;
+  border-radius: 10px;
+  font-size: 0.72rem;
+  line-height: 1.5;
+}
+
+.topicList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: 0.5rem 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.topic {
+  min-width: 0;
+  padding: 0.55rem 0.7rem 0.5rem;
+  background: #f7f9f8;
+  border: 1px solid #edf1ef;
+  border-radius: 12px;
+}
+
+.topicHeading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.6rem;
+  margin-bottom: 0.3rem;
+
+  h3 {
+    margin: 0;
+    color: #2b4652;
+    font-size: 0.76rem;
+    font-weight: 630;
+  }
+
+  span {
+    color: #84949a;
+    font-size: 0.62rem;
+    white-space: nowrap;
+  }
+}
+
+.sentimentStats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.45rem;
+}
+
+.sentimentStat {
+  display: grid;
+  min-width: 0;
+  grid-template-rows: auto 40px auto;
+  justify-items: center;
+  align-content: start;
+  gap: 0.12rem;
+  padding: 0.35rem 0.1rem 0;
+  border-top: 1px solid #e7ece9;
+  text-align: center;
+}
+
+.negativeLabel {
+  color: #9f5146;
+  font-size: 0.64rem;
+  font-weight: 650;
+}
+
+.positiveLabel {
+  color: #4f7a68;
+  font-size: 0.64rem;
+  font-weight: 650;
+}
+
+.sentimentDetail {
+  max-width: 100%;
+  overflow: hidden;
+  color: #809096;
+  font-size: 0.59rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.progressRing {
+  position: relative;
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  background: conic-gradient(from -90deg, var(--ring-color) var(--progress), #e8eeec var(--progress) 100%);
+  border-radius: 50%;
+
+  &::before {
+    position: absolute;
+    inset: 3px;
+    content: "";
+    background: #f7f9f8;
+    border-radius: 50%;
+  }
+
+  span {
+    position: relative;
+    color: #2b4652;
+    font-size: 0.6rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+.progressRingNegative { --ring-color: #a85b4f; }
+
+.progressRingPositive { --ring-color: #668579; }
+
+@media (max-width: 760px) {
+  .section {
+    padding: 0.85rem 0.8rem;
+  }
+
+  .topicList {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
