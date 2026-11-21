@@ -1,0 +1,58 @@
+server:
+  port: ${PORT:8080}
+
+spring:
+  application:
+    name: AzzurroHotels
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/postgres}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        type:
+          json_format_mapper: jackson3
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    validate-on-migrate: true
+  ai:
+    openai:
+      api-key: ${OPENAI_API_KEY}
+      base-url: ${OPENAI_BASE_URL}
+      chat:
+        api: responses
+#        model: ${OPENAI_MODEL}
+#        reasoning-effort: ${OPENAI_REASONING_EFFORT:low}
+      responses:
+        model: ${OPENAI_MODEL}
+        reasoning-effort: ${OPENAI_REASONING_EFFORT:low}
+    session:
+      repository:
+        jdbc:
+          initialize-schema: always
+
+insights:
+  llm:
+    limits:
+      max-calls: ${INSIGHTS_LLM_MAX_CALLS:100}
+      max-prompt-tokens: ${INSIGHTS_LLM_MAX_PROMPT_TOKENS:20000}
+
+omkar:
+  api-key: ${OMKAR_API_KEY}
+  booking-base-url: https://booking-scraper.omkar.cloud
+  locale: en-gb
+
+supabase:
+  storage:
+    project-url: ${SUPABASE_URL}
+    service-role-key: ${SUPABASE_SERVICE_ROLE_KEY}
+    buckets:
+      app-bucket: ${SUPABASE_STORAGE_APP_BUCKET}
+      user-bucket: ${SUPABASE_STORAGE_USER_BUCKET}
+      public-assets-bucket: ${SUPABASE_STORAGE_PUBLIC_ASSETS_BUCKET}
+      temp-bucket: ${SUPABASE_STORAGE_TEMP_BUCKET}
