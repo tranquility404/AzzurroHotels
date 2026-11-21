@@ -82,7 +82,7 @@ Import the generated `scripts/booking_reviews_reviews_import.csv` into the `publ
 - AI usage is capped at 100 model calls per backend process and 20,000 prompt tokens per call.
 - Review sync is manual and rate-limited to help stay within the Omkar Cloud request allowance.
 
-## Build notes — Nov 21–22, 2026
+## Build notes — Nov 21, 2026
 
 - Started with Booking.com data collection and scraped about 9,500 reviews.
 - Built the hotel explorer, operations dashboard, date-filtered analytics, review search, pagination, and topic classification.
