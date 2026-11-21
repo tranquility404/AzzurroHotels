@@ -93,21 +93,15 @@ Import the generated `scripts/booking_reviews_reviews_import.csv` into the `publ
 
 ### Dashboard walkthrough
 
-<video src="demo/dashboard_demo.mp4" controls preload="metadata" width="800">
-  Your browser does not support embedded videos.
-</video>
-
-### Review sync
-
-<video src="demo/testing_sync.mp4" controls preload="metadata" width="800">
-  Your browser does not support embedded videos.
-</video>
+https://github.com/user-attachments/assets/345bafbd-17ea-4f1c-a8c4-d1bdc213b474
 
 ### Azzurro AI Assistant
 
-<video src="demo/azzurro_ai_assistant_demo.mp4" controls preload="metadata" width="800">
-  Your browser does not support embedded videos.
-</video>
+https://github.com/user-attachments/assets/f46186af-ab8b-4cd7-acf1-2eef9f7e7fa1
+
+### Review sync
+
+https://github.com/user-attachments/assets/a89295af-e645-4a68-b040-6e6d438b054b
 
 ## Screenshots
 
